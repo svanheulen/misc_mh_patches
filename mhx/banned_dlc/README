@@ -1,0 +1,9 @@
+This patch will allow you to use the "Download" section in the game even if
+your system is banned. This has a side effect of breaking online multiplayer
+while enabled (but of course that's not an issue if your system is banned).
+
+When compiling, you will need to point it to the proper settings file for your
+region and version of the game. For example:
+
+    armips banned_dlc_patch.s -strequ settings_file settings/usa_100.s
+
