@@ -6,8 +6,8 @@
 
 .org url_patch_start
     // copy URL
-    mov r2, url_end-url_start
-    adr r1, url_start
+    mov r2, #0x80
+    adr r1, url
     add r0, r4, #0x620
     bl memcpy
     // enable overriding the default URL
@@ -17,9 +17,10 @@
     strb r0, [r4,#0x81]
     b url_patch_continue
 .pool
-url_start:
+url:
+.area 0x80
     .ascii custom_url,0
-url_end:
+.endarea
 
 .org verify_patch_start
     // set response data size
