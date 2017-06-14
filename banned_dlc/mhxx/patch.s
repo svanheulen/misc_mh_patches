@@ -1,6 +1,6 @@
 .3ds
 
-.open "code.bin", "patched_code.bin", 0x100000
+.open "code.bin", "code_patched.bin", 0x100000
 
 .include settings_file
 
