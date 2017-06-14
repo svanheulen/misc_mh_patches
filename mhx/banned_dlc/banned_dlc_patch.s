@@ -6,12 +6,12 @@
 
 .org main_patch_start
     // copy Blowfish key
-    mov r2, url-key
+    mov r2, #0x80
     adr r1, key
     add r0, r4, #0x5a0
     bl memcpy
     // copy URL
-    mov r2, pubkey-url
+    mov r2, #0x80
     adr r1, url
     add r0, r4, #0x620
     bl memcpy
@@ -29,9 +29,13 @@
     b main_patch_continue
 .pool
 key:
+.area 0x80
     .ascii patch_key,0
+.endarea
 url:
+.area 0x80
     .ascii patch_url,0
+.endarea
 pubkey:
 .area 0x126
     .incbin "pubkey.bin"
