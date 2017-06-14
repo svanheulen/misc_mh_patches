@@ -5,5 +5,5 @@ When compiling, you will need to point it to the proper settings file for your
 region and version of the game. You will also need to provide a URL for the
 custom DLC server. For example:
 
-    armips custom_dlc_patch.s -strequ settings_file settings/usa_100.s -strequ custom_url "http://192.168.1.139:8080/"
+    armips patch.s -strequ settings_file settings/usa_100.s -strequ custom_url "http://192.168.1.139:8080/"
 
